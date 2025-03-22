@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../test/images
+test: ../test/images
+
+nc: 3
+names: ['green_box', 'raw_box', 'red_box']
+
+roboflow:
+  workspace: colorbox
+  project: test-a5huw
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/colorbox/test-a5huw/dataset/2
