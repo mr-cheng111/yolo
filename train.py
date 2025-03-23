@@ -1,7 +1,7 @@
 from ultralytics import YOLO
 
 # 加载预训练模型（推荐yolov8n.pt）
-model = YOLO("./models/yolov8n.pt")
+model = YOLO("./models/yolo11n.pt")
 
 # 训练配置（GPU加速）
 model.train(
@@ -11,5 +11,9 @@ model.train(
     batch=16,  # 根据GPU显存调整
     device=0,  # 使用GPU
     project="cube_detection",
-    name="train_v2"
+    name="train_v3"
 )
+
+# 导出模型为 ncnn 格式
+model.export(format="ncnn", path="./models/yolo11n.ncnn")
+
